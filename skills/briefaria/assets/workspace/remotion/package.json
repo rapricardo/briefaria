@@ -1,0 +1,25 @@
+{
+  "name": "maquina-mkt-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "remotion studio",
+    "render:animatic": "remotion render Animatic",
+    "render:final": "remotion render Final"
+  },
+  "dependencies": {
+    "@remotion/captions": "^4.0.429",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/fonts": "^4.0.429",
+    "@remotion/media": "^4.0.429",
+    "@remotion/player": "^4.0.0",
+    "@remotion/transitions": "^4.0.429",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}

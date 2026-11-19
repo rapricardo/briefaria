@@ -1,0 +1,14 @@
+{
+  "tipo": "gravado",
+  "cliente": "",
+  "created": "",
+  "pipeline": {
+    "gravar": "pending",
+    "transcrever": "pending",
+    "editar": "pending",
+    "assets": "pending",
+    "compor": "pending",
+    "fragmentar": "pending",
+    "publicar": "pending"
+  }
+}

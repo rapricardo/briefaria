@@ -1,0 +1,14 @@
+{
+  "tipo": "gerado",
+  "subtipo": "",
+  "cliente": "",
+  "created": "",
+  "pipeline": {
+    "roteiro": "pending",
+    "imagens": "pending",
+    "audio": "pending",
+    "clips": "pending",
+    "compor": "pending",
+    "publicar": "pending"
+  }
+}

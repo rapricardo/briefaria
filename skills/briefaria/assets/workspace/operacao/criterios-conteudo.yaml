@@ -1,0 +1,255 @@
+version: 0.2
+updated_at: 2026-09-27
+owner: Responsável de marketing
+purpose: >
+  Critérios parametrizados para reduzir revisão manual, evitar AI slop e permitir
+  validação autônoma pré e pós-publicação por tipo de conteúdo.
+
+global:
+  application:
+    scope: aplicar apenas critérios relevantes à entrega solicitada
+    scoring: heurística editorial opcional; notas não medem performance nem autorizam publicação
+    numeric_targets: faixas de extensão, quantidade e notas são referências ajustáveis ao brief
+    required: preservar restrições de marca, evidência de claims e contratos técnicos
+    approval: respeitar autorização existente; revisão editorial não cria gate humano adicional
+  source_of_truth:
+    - MANUAL.md
+    - clientes/{cliente}/branding.json
+    - clientes/{cliente}/brand-voice.json
+    - clientes/{cliente}/competitors.json
+    - clientes/{cliente}/producao/_ativo/status.json
+    - clientes/{cliente}/producao/_ativo/session-log.md
+  mandatory_pre_checks:
+    - escopo_do_cliente_lido
+    - canal_autorizado_confirmado
+    - brand_source_lido_sem_duplicar
+    - hipotese_explicitada
+    - criterio_de_sucesso_definido
+  anti_slop_blockers:
+    - claims_factuais_sem_fonte
+    - texto_generico_que_serviria_para_qualquer_marca
+    - jargao_polido_sem_substancia_operacional
+    - canal_fora_do_escopo_aprovado
+    - promessa_comercial_medica_financeira_sem_guardrail
+    - conteudo_sem_tese_ou_sem_consequencia_pratica
+  escalation_to_responsavel:
+    - mudanca_de_posicionamento
+    - novo_canal
+    - promessa_sensivel
+    - budget_ou_publicacao
+    - baixa_confianca_do_agente
+    - conflito_com_metodologia_existente
+
+content_types:
+  seo_article_or_page:
+    scope: artigo, página pilar, landing orgânica, FAQ indexável
+    pre_publication:
+      strategy:
+        required:
+          - intencao_de_busca
+          - publico_alvo
+          - etapa_do_funil
+          - tese_da_marca
+          - CTA
+          - fontes_para_claims
+      structure:
+        min_words: 900
+        ideal_words: [1200, 1800]
+        max_words: 2500
+        required:
+          - h1_unico
+          - introducao_com_tese
+          - h2s_com_intencao_clara
+          - meta_title
+          - meta_description
+          - slug
+          - links_internos
+          - conclusao_com_proxima_acao
+        recommended:
+          - faq_quando_houver_busca_informacional
+          - tabela_ou_lista_quando_facilitar_decisao
+          - links_externos_para_fontes_autoritativas
+      scoring:
+        minimum_to_publish: 80
+        dimensions:
+          search_intent_fit: 20
+          originality_and_tension: 20
+          structure_and_readability: 20
+          evidence_and_fact_check: 20
+          conversion_path: 20
+    post_publication:
+      after_7_days:
+        - indexacao
+        - impressoes
+        - cliques
+        - ctr
+        - posicao_media
+        - queries_que_google_associou
+      after_30_days:
+        - evolucao_de_queries
+        - paginas_concorrentes
+        - oportunidade_de_expandir
+        - ajuste_de_title_description
+        - links_internos_a_adicionar
+        - proximo_teste
+
+  instagram_carousel:
+    scope: carrossel educativo, manifesto, comparativo ou narrativo
+    pre_publication:
+      slide_count:
+        min: 5
+        ideal: [7, 9]
+        max: 12
+      required:
+        - hook_forte_no_slide_1
+        - uma_tese_unica
+        - progressao_logica
+        - payoff_final
+        - CTA
+        - adequacao_visual_ao_branding
+      scoring:
+        minimum_to_publish: 80
+        dimensions:
+          hook: 20
+          thesis_clarity: 20
+          narrative_progression: 20
+          save_share_potential: 20
+          brand_fit: 20
+      anti_slop_blockers:
+        - lista_generica_de_dicas
+        - cada_slide_nao_avanca_a_ideia
+        - frase_motivacional_sem_contexto
+        - visual_desconectado_do_branding
+    post_publication:
+      after_48h:
+        - alcance
+        - salvamentos
+        - compartilhamentos
+        - comentarios_qualitativos
+        - retencao_por_slide_se_disponivel
+      learning:
+        - hook_vencedor
+        - slide_de_queda
+        - tema_para_repetir
+        - tema_para_matar
+
+  character_carousel:
+    extends: instagram_carousel
+    scope: carrossel com personagens recorrentes, especialmente Estúdio Exemplo
+    pre_publication:
+      required:
+        - personagem_definido_no_branding_json
+        - conflito_narrativo
+        - situacao_reconhecivel
+        - aprendizado_sem_tom_professoral
+        - consistencia_visual
+        - consistencia_de_voz
+        - sensibilidade_do_tema_validada
+      questions:
+        - personagem_carrega_a_ideia_ou_so_decora
+        - historia_explica_melhor_que_um_post_didatico
+        - existe_empatia_sem_infantilizar
+        - termos_proibidos_foram_evitados
+      scoring:
+        minimum_to_publish: 85
+        dimensions:
+          character_function: 20
+          narrative_conflict: 20
+          educational_value: 20
+          compliance_and_sensitivity: 20
+          visual_consistency: 20
+
+  meta_ad_creative:
+    scope: criativo/copy para Meta Ads
+    pre_publication:
+      required:
+        - hipotese
+        - publico
+        - dor
+        - promessa
+        - mecanismo
+        - prova_ou_sinal
+        - destino
+        - metrica_de_sucesso
+        - compliance_constraints
+      variants:
+        min: 3
+        ideal: 5
+      scoring:
+        minimum_to_test: 80
+        dimensions:
+          hypothesis_clarity: 20
+          offer_angle: 20
+          audience_fit: 20
+          evidence_or_proof: 20
+          measurability: 20
+      anti_slop_blockers:
+        - promessa_generica
+        - criativo_bonito_sem_hipotese
+        - copy_que_qualquer_concorrente_usaria
+        - metricas_de_sucesso_ausentes
+    post_publication:
+      after_minimum_spend_or_72h:
+        - spend
+        - impressions
+        - ctr
+        - cpc
+        - leads_or_replies
+        - cpl
+        - quality_of_leads_when_available
+        - creative_fatigue_signals
+      decisions:
+        - escalar
+        - iterar
+        - pausar
+        - gerar_variacao
+
+  competitor_monitoring:
+    scope: monitoramento de concorrência e mercado
+    cadence: weekly
+    sources:
+      - instagram
+      - meta_ads_library
+      - sites_landing_pages
+      - comentarios_publicos
+      - newsletters_ou_emails_quando_disponivel
+    capture:
+      - concorrente
+      - novo_anuncio_ou_post
+      - promessa
+      - oferta
+      - criativo
+      - formato
+      - CTA
+      - prova
+      - engajamento_observavel
+      - oportunidade
+      - risco
+    output_required_sections:
+      - o_que_mudou_no_mercado
+      - angulos_recorrentes
+      - angulos_saturados
+      - oportunidades_de_diferenciacao
+      - hipoteses_para_testar
+      - recomendacao_do_agente
+    escalation_to_responsavel_if:
+      - concorrente_muda_posicionamento_relevante
+      - oportunidade_exige_budget
+      - risco_de_claim_comparativo
+      - recomendacao_afeta_posicionamento
+
+  post_publication_analysis:
+    scope: análise de resultado de conteúdo/campanha publicada
+    required:
+      - hipotese_original
+      - resultado_observado
+      - comparacao_com_criterio_de_sucesso
+      - explicacao_provavel
+      - grau_de_confianca
+      - proxima_acao
+    actions:
+      - repetir
+      - variar
+      - aprofundar
+      - pausar
+      - arquivar_aprendizado

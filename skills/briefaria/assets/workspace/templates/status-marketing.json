@@ -1,0 +1,74 @@
+{
+  "tipo": "marketing",
+  "formato": "multi",
+  "descricao": "",
+  "created": "",
+  "pipeline": {
+    "fundacao": {
+      "status": "pending",
+      "label": "Fundação — Brand context & Posicionamento",
+      "skills": [
+        "marketing-os"
+      ],
+      "entregaveis": [
+        "brand-context.md",
+        "aprendizados.md",
+        "competitors.json"
+      ],
+      "descricao": "Preencher o brand-context do cliente (restrições, produto, público, posicionamento, provas, voz, mapa de leitura, lacunas) e a análise competitiva"
+    },
+    "estrategia": {
+      "status": "pending",
+      "label": "Estratégia — Campaign Planning",
+      "skills": [
+        "marketing-os"
+      ],
+      "entregaveis": [
+        "campaign-brief.md",
+        "calendario-editorial.md"
+      ],
+      "descricao": "Objetivos SMART, segmentação de audiência, canais, calendário editorial"
+    },
+    "conteudo": {
+      "status": "pending",
+      "label": "Conteúdo — Criação Multi-canal",
+      "skills": [
+        "marketing-os"
+      ],
+      "entregaveis": [
+        "conteudo/"
+      ],
+      "descricao": "Blog, social, email, landing pages, vídeos — tudo revisado contra o brand-context"
+    },
+    "distribuicao": {
+      "status": "pending",
+      "label": "Distribuição — Ads & SEO",
+      "skills": [
+        "marketing-os"
+      ],
+      "mcps": [
+        "fb-ads",
+        "gtm"
+      ],
+      "entregaveis": [
+        "seo-audit.md"
+      ],
+      "descricao": "Configurar campanhas de ads, tracking GTM, otimizar SEO"
+    },
+    "analise": {
+      "status": "pending",
+      "label": "Análise — Performance & Otimização",
+      "skills": [
+        "marketing-os"
+      ],
+      "mcps": [
+        "fb-ads",
+        "amplitude"
+      ],
+      "entregaveis": [
+        "relatorio-performance.md"
+      ],
+      "descricao": "Métricas por canal, relatório mensal, recomendações de otimização"
+    }
+  }
+}

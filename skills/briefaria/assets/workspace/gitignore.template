@@ -1,0 +1,21 @@
+# Dados de trabalho e credenciais
+/clientes/
+/sistema/fila/
+.env
+.env.*
+!.env.example
+!.env.meta-instagram.example
+!.env.cloudflare-r2.example
+
+# Dependências e saídas locais
+/.cache/
+/models/*
+!/models/.gitkeep
+/.venv/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+/remotion/public/*
+!/remotion/public/.gitkeep
+/remotion/out/

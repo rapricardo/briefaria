@@ -1,0 +1,18 @@
+{
+  "_doc": "Identidade e operação do cliente. Contexto de marca fica em brand-context.md; identidade visual em branding.json.",
+  "nome": "???",
+  "slug": "???",
+  "setor": "???",
+  "links": {
+    "site": ""
+  },
+  "canais": {
+    "_doc": "Perfis ativos: URL ou handle",
+    "instagram": "",
+    "linkedin": "",
+    "youtube": ""
+  },
+  "integracoes": {
+    "_doc": "IDs externos (ClickUp, contas de anúncio). Credenciais ficam fora deste arquivo."
+  }
+}

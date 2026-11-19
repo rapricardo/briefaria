@@ -1,0 +1,12 @@
+{
+  "_doc": "Identidade visual consumida por imagen, preflight e render. Tom e palavras proibidas são cópia curta do brand-context.md (Voz e Restrições) para prompts de imagem; a fonte é o brand-context.",
+  "nome": "{{CLIENTE}}",
+  "cores": "Principal: ??? #000000 | Secundária: ??? #000000 | Acento: ??? #000000",
+  "fontes": "???",
+  "estilo_visual": "???",
+  "style_reference": "??? — referência visual em inglês para geração de imagens",
+  "direcao_visual": {},
+  "tom_de_voz": "??? — 1-2 frases, derivado de brand-context.md › Voz",
+  "palavras_proibidas": "??? — derivado de brand-context.md › Restrições e Voz",
+  "personagens": {}
+}
